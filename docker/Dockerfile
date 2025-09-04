@@ -7,8 +7,8 @@
 #FROM artifactory-pub.bit9.local:5000/cb/connector_env_base:centos7-1.4.0
 FROM rockylinux/rockylinux:8
 ENV GOFLAGS -modcacherw
-ADD cb-event-forwarder-*.el7.x86_64.rpm /tmp
-RUN yum -y install /tmp/cb-event-forwarder-*.el7.x86_64.rpm
+ADD cb-event-forwarder-*.el8.x86_64.rpm /tmp
+RUN yum -y install /tmp/cb-event-forwarder-*.el8.x86_64.rpm
 RUN mv /etc/cb/integrations/event-forwarder/cb-event-forwarder.conf /root
 ADD compose.yml /compose.yml
 ADD entrypoint.sh /entrypoint.sh
